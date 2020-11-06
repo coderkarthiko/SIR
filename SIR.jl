@@ -14,7 +14,7 @@ macro bind(def, element)
 end
 
 # ╔═╡ 9bdc55d0-1f82-11eb-2fae-4957d857b9b8
-using Plots, Images, PlutoUI
+using Plots, PlutoUI
 
 # ╔═╡ a4bd46d0-1f98-11eb-395e-55c08e663cc3
 # I'm very new to Julia!
