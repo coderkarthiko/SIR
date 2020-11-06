@@ -57,7 +57,7 @@ end
 
 # ╔═╡ 581d4b90-1fa2-11eb-1138-a5cfa4e8de7c
 begin
-	p = plot(1:iterations, S, label="susceptible", linewidth=2, grid=false, 		                xlabel="time", ylabel="SIR population")
+	p = plot(1:iterations, S, label="susceptible", linewidth=2, grid=false, xlabel="time", ylabel="SIR population")
 	plot!(p, 1:iterations, I, label="infectious", linewidth=2, grid=false)
 	plot!(p, 1:iterations, R, label="removed", linewidth=2, grid=false)
 	plot!(p, 1:iterations, S + I + R, label="population", linewidth=2, grid=false)
