@@ -5,5 +5,5 @@ The SIR model is a set of differential equations used to model epidemic spread. 
 
 ![](diffeq1.png)
 
-![]()diffeq2.png
+![](diffeq2.png)
 
