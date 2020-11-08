@@ -2,7 +2,7 @@
 The SIR model is a set of differential equations used to model epidemic/pandemic spread. S is the number of people who are susceptible, I is the number of people who are infected and R is the number of people who are removed (removed = dead or recovered). We assume that nobody is getting in or out of the pandemic zone (a closed system).
 ![](SIR.png)
 
-![](diffeq1.png)
+![](diffeq.png)
 
 ![](continuous.gif)
 
