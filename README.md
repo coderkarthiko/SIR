@@ -12,5 +12,5 @@ Instead of solving the set of differential equations, we can also simulate an ep
 
 ![](randomwalk.gif)
 
-![](plot.png)
+![](plot.gif)
 
