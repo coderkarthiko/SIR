@@ -88,7 +88,6 @@ end
 
 # ╔═╡ caa833f2-21aa-11eb-330a-65620975e0cd
 # blobs on scatterplot
-# blobs on scatterplot
 function showblobs(S, I, R, iteration)
 	map = scatter(pullx.(S[iteration]), 
 		      pully.(S[iteration]), 
@@ -98,7 +97,7 @@ function showblobs(S, I, R, iteration)
 		      axis=false)
 	scatter!(map, pullx.(I[iteration]),
 		      pully.(I[iteration]),
-	              grid=false,
+		      grid=false,
 		      axis=nothing,
 		      color=RGB(1, 0, 0),
 		      labels=false)
@@ -112,27 +111,25 @@ function showblobs(S, I, R, iteration)
 end
 
 # ╔═╡ fd6feda0-21aa-11eb-31bc-c7128afe551a
-function showplots(S, I, R, P, iteration)
+# show the SIR among blobs
+function showplots(S, I, R, iteration)
 	pop = plot(1:iteration, 
 		   length.(S[1:iteration]),  
 		   color=RGB(0, 1, 0),
-		   linewidth=2,
+	           linewidth=2,
 		   grid=false,
-		   label="susceptible")
+		   labels=false,
+		   axis=nothing)
 	plot!(pop, 1:iteration,
 		   length.(I[1:iteration]),
 		   color=RGB(1, 0, 0),
 		   linewidth=2,
-		   label="infectious")
+		   labels=false)
 	plot!(pop, 1:iteration,
 		   length.(R[1:iteration]),
 		   color=RGB(0.5, 0.5, 0.5),
 		   linewidth=2,
-		   label="removed")
-	plot!(pop, 1:iteration,
-		   ones(iteration) * P,
-		   color=RGB(0, 0, 0),
-		   label=nothing)
+		   labels=false)
 	pop
 end
 
@@ -158,7 +155,7 @@ end
 @bind r Slider(0:0.1:bound; default=1, show_value=true) # infection radius
 
 # ╔═╡ 180f009e-21ac-11eb-184b-bf1e1f6daad2
-@bind δ Slider(0.01:0.01:0.5; default=0.1, show_value=true) # blob step size
+@bind δ Slider(0.01:0.01:0.5; default=0.1, show_value=true) # blob mobility
 
 # ╔═╡ fcb404c2-21b7-11eb-36b5-0578ceecec98
 @bind T Slider(1:50; default=1, show_value=true) # time period of direction change
