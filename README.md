@@ -4,8 +4,6 @@ The SIR model is a set of differential equations used to model epidemic/pandemic
 
 ![](diffeq1.png)
 
-![](diffeq2.png)
-
 ![](continuous.gif)
 
 ### Simulation 
