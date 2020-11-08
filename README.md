@@ -6,7 +6,7 @@ The SIR model is a set of differential equations used to model epidemic spread. 
 
 ![](diffeq2.png)
 
-![](solution.png)
+![](continuous.png)
 
 ### Simulation 
 We can also simulate the epidemic. The SIR curves look very similiar to the the solution curves of the differential equations show above. Each blob is either susceptible (green), infected (red) or removed (gray). At each timestep, an infected blob can pass the disease to nearby susceptible blobs. We can adjust the infection rate, radius of infection, the population size, initial number of infected blobs and the size of the map. 
