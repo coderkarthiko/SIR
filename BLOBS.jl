@@ -87,50 +87,52 @@ function simulate(iterations, P, I0, r, β, γ, bound, δ, T)
 end
 
 # ╔═╡ caa833f2-21aa-11eb-330a-65620975e0cd
+# blobs on scatterplot
+# blobs on scatterplot
 function showblobs(S, I, R, iteration)
 	map = scatter(pullx.(S[iteration]), 
-			    pully.(S[iteration]), 
-				grid=false, 
-				axis=nothing, 
-				color=RGB(0, 1, 0),
-				labels=false)
+		      pully.(S[iteration]), 
+		      grid=false,  
+		      color=RGB(0, 1, 0),
+		      labels=false,
+		      axis=false)
 	scatter!(map, pullx.(I[iteration]),
-				pully.(I[iteration]),
-				grid=false,
-				axis=nothing,
-				color=RGB(1, 0, 0),
-				labels=false)
+		      pully.(I[iteration]),
+	              grid=false,
+		      axis=nothing,
+		      color=RGB(1, 0, 0),
+		      labels=false)
 	scatter!(map, pullx.(R[iteration]),
-				pully.(R[iteration]),
-				grid=false,
-				axis=nothing,
-				color=RGB(0.5, 0.5, 0.5),
-				labels=false)
+		      pully.(R[iteration]),
+		      grid=false,
+		      axis=nothing,
+		      color=RGB(0.5, 0.5, 0.5),
+		      labels=false)
 	map
 end
 
 # ╔═╡ fd6feda0-21aa-11eb-31bc-c7128afe551a
 function showplots(S, I, R, P, iteration)
 	pop = plot(1:iteration, 
-			   length.(S[1:iteration]),  
-		       color=RGB(0, 1, 0),
-	           linewidth=2,
-			   grid=false,
-			   label="susceptible")
+		   length.(S[1:iteration]),  
+		   color=RGB(0, 1, 0),
+		   linewidth=2,
+		   grid=false,
+		   label="susceptible")
 	plot!(pop, 1:iteration,
-			   length.(I[1:iteration]),
-			   color=RGB(1, 0, 0),
-			   linewidth=2,
-			   label="infectious")
+		   length.(I[1:iteration]),
+		   color=RGB(1, 0, 0),
+		   linewidth=2,
+		   label="infectious")
 	plot!(pop, 1:iteration,
-			   length.(R[1:iteration]),
-			   color=RGB(0.5, 0.5, 0.5),
-			   linewidth=2,
-			   label="removed")
+		   length.(R[1:iteration]),
+		   color=RGB(0.5, 0.5, 0.5),
+		   linewidth=2,
+		   label="removed")
 	plot!(pop, 1:iteration,
-			   ones(iteration) * P,
-			   color=RGB(0, 0, 0),
-			   label=nothing)
+		   ones(iteration) * P,
+		   color=RGB(0, 0, 0),
+		   label=nothing)
 	pop
 end
 
@@ -169,19 +171,13 @@ begin
 end
 
 # ╔═╡ ba12a380-21ab-11eb-20c3-fb7216fad532
-begin
-	dir = "C:/Users/rgbka/Desktop/SIRsim/"
-	for i in 1:iterations
-		plot = showplots(S, I, R, P, i)
-		savefig(plot, string(dir, i, ".png"))
-	end
-end
+showblobs(S, I, R, iteration)
 
 # ╔═╡ a36663a0-21ac-11eb-1618-eb410ee37272
 @bind iteration Slider(1:iterations; default=1, show_value=true)
 
 # ╔═╡ a8de0960-21ab-11eb-156f-ef670133cd11
-showplots(S, I, R, P, iteration)
+showplots(S, I, R, iteration)
 
 # ╔═╡ Cell order:
 # ╠═9ed22b10-2023-11eb-185d-1b43278ebd5c
