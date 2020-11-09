@@ -51,13 +51,10 @@ function simulate(iterations, P, I0, r, β, γ, bound, δ, T)
 	S = [[blob(uniform(bound), uniform(bound), 0, 0, "susceptible") for i in 1:P-I0]]
 	I = [[blob(uniform(bound), uniform(bound), 0, 0, "infectious") for i in 1:I0]]
 	R = [[]]
-	blobchangedir.(S[1], δ)
-	blobchangedir.(I[1], δ)
-	blobchangedir.(R[1], δ)
 	for i in 1:iterations
 		sus, inf, rem = deepcopy(S[i]), deepcopy(I[i]), deepcopy(R[i])
 		newsus, newinf = Any[], Any[]
-		if i % T == 0
+		if (i - 1) % T == 0
 			blobchangedir.(sus, δ)
 			blobchangedir.(inf, δ)
 			blobchangedir.(rem, δ)
