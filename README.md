@@ -11,5 +11,3 @@ We can also simulate the epidemic. The SIR curves look very similiar to the the 
 
 ![](randomwalk.gif)
 
-![](plot.gif)
-
