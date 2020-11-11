@@ -60,11 +60,9 @@ end
 
 # ╔═╡ 581d4b90-1fa2-11eb-1138-a5cfa4e8de7c
 begin
-	p = plot(1:iterations, S, label=false, linewidth=2, grid=false, 
-			 color=RGB(1, 0.7, 0), axis=nothing)
-	plot!(p, 1:iterations, I, label=false, linewidth=2, grid=false, 		     		      color=RGB(1, 0, 0), axis=nothing)
-	plot!(p, 1:iterations, R, label=false, linewidth=2, grid=false, 
-		  color=RGB(0, 0.65, 1), axis=nothing)
+	p = plot(1:iterations, S, label=false, linewidth=2, grid=false, color=RGB(1, 0.7, 0), axis=nothing)
+	plot!(p, 1:iterations, I, label=false, linewidth=2, grid=false, color=RGB(1, 0, 0), axis=nothing)
+	plot!(p, 1:iterations, R, label=false, linewidth=2, grid=false, color=RGB(0, 0.65, 1), axis=nothing)
 end
 
 # ╔═╡ Cell order:
